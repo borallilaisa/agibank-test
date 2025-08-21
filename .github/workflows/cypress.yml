@@ -23,6 +23,24 @@ jobs:
 
       - name: Instalar dependências
         run: npm install
+      
+      - name: Instalar Cypress
+        run: npm install cypress --save-dev
+      
+      - name: Corrigir permissões do Cypress
+        run: chmod +x ./node_modules/.bin/cypress
+
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/Cypress
+          key: cypress-cache-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+        
+      - name: Install dependencies
+        run: npm install
+
+      - name: Instalar Cypress binary
+        run: npx cypress install
 
       - name: Rodar Cypress
         run: npx cypress run
@@ -35,7 +53,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-            - name: Salvar screenshots e vídeos
+      - name: Salvar screenshots e vídeos
         uses: actions/upload-artifact@v4
         with:
           name: cypress-artifacts
