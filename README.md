@@ -53,10 +53,11 @@ npm run cypress:run
 npm run cypress:open
 
 # Rodar um teste especifico
+```bash
 npx cypress run --spec "cypress/e2e/CheckSearchBlog.cy.js"
 ```
 
-## ⚙️ Configuracao
+# ⚙️ Configuracao
 
 - **Base URL**: Definida para ser `https://blog.agibank.com.br`
 - **Timeouts**: Definida para que o Cypress possa esperar o carregamento da pagina
