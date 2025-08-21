@@ -33,6 +33,9 @@ Cypress.Commands.add('verificarItemMenu', (nomeMenu, tituloEsperado) => {
 
 Cypress.Commands.add('pageLoad', () => {
     cy.get('body').should('be.visible');
+    cy.scrollTo('bottom');
+    cy.scrollTo('top');
+   // cy.wait(20000);
     cy.get('div[class="slick-list draggable"]').should('be.visible');
 });
 

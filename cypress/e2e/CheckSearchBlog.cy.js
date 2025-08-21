@@ -11,12 +11,10 @@ describe('CheckSearchBlog', () => {
     ];
 
     beforeEach(() => {
-        // Visit the blog homepage before each test for better isolation
         cy.homePage();
     });
 
     it('Checar Funcionamento de Menu', () => {
-        // Test each menu item
         menuItems.forEach(({ nome, titulo }) => {
             cy.verificarItemMenu(nome, titulo);
         });
@@ -49,15 +47,10 @@ describe('CheckSearchBlog', () => {
         //realiza o primeiro teste para podermos estar na página de resultados
         cy.realizarBusca('Agibank');
         cy.validarResultadosBusca('Agibank');
+        cy.get('input[name="email"]').first().scrollIntoView();
+        cy.get('input[name="email"]').first().type('teste@teste.com');
 
-        // Test newsletter subscription
-        cy.get('input[id="subscribe-field-blog_subscription-3"]')
-            .should('be.visible')
-            .type('teste@teste.com');
-
-        cy.get('button[name="jetpack_subscriptions_widget"]')
-            .should('be.visible')
-            .click();
+        cy.get('button[name="jetpack_subscriptions_widget"]').should('be.visible').click();
     });
 
     it('Verificar responsividade mobile', () => {
