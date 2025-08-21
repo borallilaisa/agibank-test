@@ -1,6 +1,6 @@
 # Cypress Test Suite - Blog Agibank
 
-## Observacao
+## Observação
 Existem tres bugs que eu pude encontrar que acabam que me impediram de fazer uma cobertura mais completa, sendo eles:
 -  Ao abrir a página principal, existe um elemento de slide (possui a classe class="slick-list draggable"), esse elemento esporadicamente não carrega corretamente, quando ele não carrega o Cypress entende que a página ainda não terminou de ser carrega, impedindo o acesso aos outros elementos (Como por exemplo, o input de busca)
 -  Ao navegar na página de resultados de busca, ela possui um scroll infinito mas internamente um sistema de páginação, a partir da segunda página os artigos carregam "abertos" e não somente o titulo como é na primeira página
@@ -14,7 +14,7 @@ Existem tres bugs que eu pude encontrar que acabam que me impediram de fazer uma
 - **Responsividade Mobile** - Testa comportamentos para uso em mobile devices
 
 ## 🛠️ Comandos Customizaveis
-Sao criados em suma para evitar a repeticao de codigo. 
+São criados em suma para evitar a repetição de código. 
 - cy.realizarBusca(texto);
 - cy.validarResultadosBusca(texto);
 - cy.verificarItemMenu('nomeMenu', 'titulo');
@@ -40,12 +40,12 @@ cypress/
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Instalacao
+### Instalação
 ```bash
 npm install
 ```
 
-### Execucao de testes
+### Execução de testes
 
 npm run cypress:run
 
