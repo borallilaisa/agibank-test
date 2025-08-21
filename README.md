@@ -1,7 +1,7 @@
 # Cypress Test Suite - Blog Agibank
 
 ## Observacao
-- Existem tres bugs que eu pude encontrar que acabam que me impediram de fazer uma cobertura mais completa, sendo eles:
+Existem tres bugs que eu pude encontrar que acabam que me impediram de fazer uma cobertura mais completa, sendo eles:
 -  Ao abrir a página principal, existe um elemento de slide (possui a classe class="slick-list draggable"), esse elemento esporadicamente não carrega corretamente, quando ele não carrega o Cypress entende que a página ainda não terminou de ser carrega, impedindo o acesso aos outros elementos (Como por exemplo, o input de busca)
 -  Ao navegar na página de resultados de busca, ela possui um scroll infinito mas internamente um sistema de páginação, a partir da segunda página os artigos carregam "abertos" e não somente o titulo como é na primeira página
 -  Ao clicar em um artigo da segunda página e retornar para a página de resultado de busca, apenas os artigos dessa página aparecem, forçando o usuário a realizar a busca novamente para poder ter acesso a todos os artigos
